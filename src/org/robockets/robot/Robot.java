@@ -1,6 +1,8 @@
 package org.robockets.robot;
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.robockets.robot.commands.CalibrateGyro;
 import org.robockets.robot.commands.DriveGo;
 import org.robockets.robot.subsystems.Drivetrain;
 
@@ -9,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import sun.nio.ch.Net;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,9 +34,14 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	NetworkTable.flush();
+    	NetworkTable.globalDeleteAll();
+
 		drivetrain = new Drivetrain();
 		driveGo = new DriveGo();
 		oi = new OI();
+
+		SmartDashboard.putData("Calibrate Gyro", new CalibrateGyro());
     }
 	
 	/**
