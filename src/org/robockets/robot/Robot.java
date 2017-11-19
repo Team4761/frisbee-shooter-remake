@@ -1,6 +1,7 @@
 package org.robockets.robot;
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.robockets.robot.commands.DriveGo;
 import org.robockets.robot.subsystems.Drivetrain;
 
@@ -34,7 +35,14 @@ public class Robot extends IterativeRobot {
 		drivetrain = new Drivetrain();
 		driveGo = new DriveGo();
 		oi = new OI();
-    }
+
+		// SmartDashboard
+
+		// Drivetrain
+
+		SmartDashboard.putNumber("DriveSpeedMult", 1);
+
+	}
 	
 	/**
      * This function is called once each time the robot enters Disabled mode.

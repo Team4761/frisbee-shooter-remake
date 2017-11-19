@@ -1,5 +1,6 @@
 package org.robockets.robot.subsystems;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.robockets.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -16,7 +17,9 @@ public class Drivetrain extends Subsystem {
     }
     
     public void driveArcade(double leftValue, double rightValue) {
-    	RobotMap.robotDrive.arcadeDrive(-leftValue, rightValue);
+    	double scalar = SmartDashboard.getNumber("DriveSpeedMult", 1);
+
+    	RobotMap.robotDrive.arcadeDrive(-leftValue*scalar, rightValue*scalar);
     }
     
     public void stop() {
