@@ -9,6 +9,6 @@ public class GyroPIDOutput implements PIDOutput {
 
 	@Override
 	public void pidWrite(double output) {
-		Robot.drivetrain.driveArcade(0, output);
+		//Robot.drivetrain.driveArcade(0, output);
 	}
 }

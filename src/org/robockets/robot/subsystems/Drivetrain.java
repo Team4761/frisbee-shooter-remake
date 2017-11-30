@@ -33,6 +33,12 @@ public class Drivetrain extends Subsystem {
     	RobotMap.robotDrive.arcadeDrive(translate, rotate);
     }
 
+    public void driveArcadeGyro(double translate) {
+		double rotate = gyroPID.get();
+
+		RobotMap.robotDrive.arcadeDrive(translate, rotate);
+	}
+
     public double getAngle() {
 		return gyroPIDSource.pidGet();
 	}
