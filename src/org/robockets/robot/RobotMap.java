@@ -15,4 +15,6 @@ public class RobotMap {
 	public static Victor backRight = new Victor(0);
 	
 	public static RobotDrive robotDrive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+		
+	public static DoubleSolenoid flapper = new DoubleSolenoid(2, 3);
 }
