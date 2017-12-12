@@ -20,9 +20,9 @@ import org.robockets.robot.subsystems.Flapper;
  */
 public class Robot extends IterativeRobot {
 
-	public static OI oi;
 	public static Drivetrain drivetrain;
 	public static Flapper flapper;
+	public static OI oi;
 
     Command autonomousCommand;
     Command driveGo;
