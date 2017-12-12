@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import org.robockets.robot.subsystems.Flapper;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,8 +20,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  */
 public class Robot extends IterativeRobot {
 
-	public static OI oi;
 	public static Drivetrain drivetrain;
+	public static Flapper flapper;
+	public static OI oi;
 
     Command autonomousCommand;
     Command driveGo;
@@ -32,6 +34,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		drivetrain = new Drivetrain();
+		flapper = new Flapper();
 		driveGo = new DriveGo();
 		oi = new OI();
     }
