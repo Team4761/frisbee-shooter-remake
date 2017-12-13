@@ -2,7 +2,9 @@ package org.robockets.robot;
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import org.robockets.robot.commands.DriveGo;
+import org.robockets.robot.commands.SpinSpinners;
 import org.robockets.robot.subsystems.Drivetrain;
+import org.robockets.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -22,10 +24,12 @@ public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
 	public static Flapper flapper;
+  public static Shooter shooter;
 	public static OI oi;
 
     Command autonomousCommand;
     Command driveGo;
+    Command SpinSpinners;
     SendableChooser chooser;
 
     /**
@@ -36,6 +40,7 @@ public class Robot extends IterativeRobot {
 		drivetrain = new Drivetrain();
 		flapper = new Flapper();
 		driveGo = new DriveGo();
+		shooter  = new Shooter();
 		oi = new OI();
     }
 	
