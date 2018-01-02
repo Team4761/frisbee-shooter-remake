@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.robockets.robot.commands.Fire;
+import org.robockets.robot.commands.Shoot;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -13,8 +14,10 @@ public class OI {
 	public static Joystick joystick = new Joystick(0);
 
 	public static Button aButton = new JoystickButton(joystick, 1);
+	public static Button rightBumper = new JoystickButton(joystick, 5);
 
 	public OI() {
 		aButton.whenPressed(new Fire());
+		rightBumper.whileHeld(new Shoot());
 	}
 }
