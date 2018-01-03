@@ -3,6 +3,7 @@ package org.robockets.robot;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.robockets.robot.commands.DriveGo;
+import org.robockets.robot.commands.DrivePID;
 import org.robockets.robot.commands.SpinSpinners;
 import org.robockets.robot.subsystems.Drivetrain;
 import org.robockets.robot.subsystems.Shooter;
@@ -31,6 +32,7 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     Command driveGo;
     Command SpinSpinners;
+    Command drivePID;
     SendableChooser chooser;
 
     /**
@@ -42,6 +44,7 @@ public class Robot extends IterativeRobot {
 		drivetrain = new Drivetrain();
 		flapper = new Flapper();
 		driveGo = new DriveGo();
+		drivePID = new DrivePID();
 		//shooter  = new Shooter();
 		SmartDashboard.putNumber("GyroP", drivetrain.gyroPID.getP());
 		SmartDashboard.putNumber("GyroI", drivetrain.gyroPID.getI());
@@ -81,7 +84,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-       
+       drivePID.start();
     }
 
     /**
