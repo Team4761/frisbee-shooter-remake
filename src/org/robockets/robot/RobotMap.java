@@ -14,7 +14,7 @@ public class RobotMap {
 	public static Victor backLeft = new Victor(1);
 	public static Victor backRight = new Victor(4);
 
-	public static Victor shooterFront = new Victor(8);
+	public static Victor shooterFront = new Victor(7);
 	public static Victor shooterBack = new Victor(9);
 	
 	public static RobotDrive robotDrive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);

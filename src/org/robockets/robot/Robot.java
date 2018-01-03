@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import org.robockets.robot.subsystems.Flapper;
 
 /**
- * The VM is configured to automatically run this class, and to call the
+ * The VM is configured to automatically run this class, and to call the0
  * functions corresponding to each mode, as described in the IterativeRobot
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
@@ -24,7 +24,7 @@ public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
 	public static Flapper flapper;
-  public static Shooter shooter;
+  	public static Shooter shooter;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -37,11 +37,12 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+		oi = new OI();
 		drivetrain = new Drivetrain();
 		flapper = new Flapper();
 		driveGo = new DriveGo();
-		shooter  = new Shooter();
-		oi = new OI();
+		//shooter  = new Shooter();
+
     }
 	
 	/**
