@@ -14,10 +14,10 @@ public class OI {
 	public static Joystick joystick = new Joystick(0);
 
 	public static Button aButton = new JoystickButton(joystick, 1);
-	public static Button rightBumper = new JoystickButton(joystick, 5);
+	//public static Button rightBumper = new JoystickButton(joystick, 5);
 
 	public OI() {
 		aButton.whenPressed(new Fire());
-		rightBumper.whileHeld(new Shoot());
+		//rightBumper.whileHeld(new Shoot());
 	}
 }

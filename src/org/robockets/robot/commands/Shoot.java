@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class Shoot extends CommandGroup {
 
     public Shoot() {
-    	addParallel(new SpinSpinners());
-    	addSequential(new WaitCommand(2));
-    	addParallel(new Fire());
+    	//addParallel(new SpinSpinners());
+    	//addSequential(new WaitCommand(2));
+    	//addParallel(new Fire());
     }
 }
