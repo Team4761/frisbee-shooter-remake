@@ -46,6 +46,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("GyroP", drivetrain.gyroPID.getP());
 		SmartDashboard.putNumber("GyroI", drivetrain.gyroPID.getI());
 		SmartDashboard.putNumber("GyroD", drivetrain.gyroPID.getD());
+		SmartDashboard.putNumber("GyroSetpoint", 0);
     }
 
     public void robotPeriodic() {
