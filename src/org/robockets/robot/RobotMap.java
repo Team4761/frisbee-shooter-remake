@@ -18,6 +18,8 @@ public class RobotMap {
 	public static Victor shooterBack = new Victor(9);
 	
 	public static RobotDrive robotDrive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+
+	public static ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 		
 	public static DoubleSolenoid flapper = new DoubleSolenoid(2, 3); // TODO: Get these channels
 }

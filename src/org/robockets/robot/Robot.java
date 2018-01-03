@@ -1,6 +1,7 @@
 package org.robockets.robot;
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.robockets.robot.commands.DriveGo;
 import org.robockets.robot.commands.SpinSpinners;
 import org.robockets.robot.subsystems.Drivetrain;
@@ -42,8 +43,19 @@ public class Robot extends IterativeRobot {
 		flapper = new Flapper();
 		driveGo = new DriveGo();
 		//shooter  = new Shooter();
-
+		SmartDashboard.putNumber("GyroP", drivetrain.gyroPID.getP());
+		SmartDashboard.putNumber("GyroI", drivetrain.gyroPID.getI());
+		SmartDashboard.putNumber("GyroD", drivetrain.gyroPID.getD());
     }
+
+    public void robotPeriodic() {
+    	Robot.drivetrain.gyroPID.setPID(
+    			SmartDashboard.getNumber("GyroP", 0),
+				SmartDashboard.getNumber("GyroI", 0),
+				SmartDashboard.getNumber("GyroD", 0)
+		);
+    	SmartDashboard.putNumber("Gyro Value", Robot.drivetrain.gyroPIDSource.pidGet());
+	}
 	
 	/**
      * This function is called once each time the robot enters Disabled mode.
