@@ -18,7 +18,7 @@ public class Drivetrain extends Subsystem {
 	public PIDController gyroPID;
 
 	public Drivetrain() {
-		gyroPID = new PIDController(-0.0171, 0, 0, gyroPIDSource, new DummyPIDOutput());
+		gyroPID = new PIDController(-0.017, -0.0001, 0, gyroPIDSource, new DummyPIDOutput());
 		gyroPID.disable();
 		gyroPID.setOutputRange(-1.0, 1.0);
 		gyroPID.setAbsoluteTolerance(2);
