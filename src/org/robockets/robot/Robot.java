@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.robockets.robot.commands.DriveGo;
 import org.robockets.robot.commands.DrivePID;
+import org.robockets.robot.commands.ResetGyro;
 import org.robockets.robot.commands.SpinSpinners;
 import org.robockets.robot.subsystems.Drivetrain;
 import org.robockets.robot.subsystems.Shooter;
@@ -49,7 +50,10 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("GyroP", drivetrain.gyroPID.getP());
 		SmartDashboard.putNumber("GyroI", drivetrain.gyroPID.getI());
 		SmartDashboard.putNumber("GyroD", drivetrain.gyroPID.getD());
-		SmartDashboard.putNumber("GyroSetpoint", 0);
+		SmartDashboard.putNumber("Gyro Value", 0);
+		RobotMap.gyro.reset();
+		SmartDashboard.putNumber("GyroSetpoint", 90);
+		SmartDashboard.putData(new ResetGyro());
     }
 
     public void robotPeriodic() {
@@ -58,7 +62,7 @@ public class Robot extends IterativeRobot {
 				SmartDashboard.getNumber("GyroI", 0),
 				SmartDashboard.getNumber("GyroD", 0)
 		);
-    	SmartDashboard.putNumber("Gyro Value", Robot.drivetrain.gyroPIDSource.pidGet());
+		SmartDashboard.putNumber("Gyro Value", Robot.drivetrain.gyroPIDSource.pidGet());
 	}
 	
 	/**
